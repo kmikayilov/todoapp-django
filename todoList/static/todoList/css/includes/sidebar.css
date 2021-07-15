@@ -1,0 +1,57 @@
+.sidebar {
+	height: 100%;
+	width: 0;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: hsl(0, 0%, 16%);
+	color: #fff;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 30px;
+	padding-right: 5px;
+}
+
+.sidebar .nav-items {
+	width: 100%;
+	height: fit-content;
+}
+
+.sidebar .nav-items .nav-item {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	font-size: 14px;
+	color: #ffffffde;
+	padding: 5px 18px 5px 5px;
+	border-radius: 5px;
+}
+
+.sidebar .nav-items .nav-item .nav-item-link {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	text-decoration: none;
+	color: #ffffffde;
+}
+
+.sidebar .nav-items .nav-item:hover {
+	background-color: #363636;
+}
+
+.sidebar .nav-items .nav-item .nav-item-icon {
+	margin-right: 8px;
+}
+
+.sidebar .nav-items .nav-item .nav-item-icon.inbox {
+	color: #5297ff;
+}
+
+.sidebar .nav-items .nav-item .nav-item-icon.today {
+	color: #25b84c;
+}
+
+.sidebar .nav-items .nav-item .nav-item-icon.upcoming {
+	color: #a970ff;
+}

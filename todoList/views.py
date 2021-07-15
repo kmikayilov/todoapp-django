@@ -10,3 +10,9 @@ def startingPage(request):
 
 def todayTodo(request):
     return render(request, 'todoList/todayTodoPage.html')
+
+def upcomingTodo(request):
+    pass
+
+def inboxTodo(request):
+    pass
