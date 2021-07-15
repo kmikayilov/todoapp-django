@@ -1,0 +1,125 @@
+.app {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.header {
+	width: 100%;
+	height: 44px;
+	background-color: hsl(0, 0%, 16%);
+	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 15%);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
+
+.menu-btn-wrapper {
+	height: 80%;
+	width: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 20px;
+}
+
+.menu-btn-wrapper .menu-btn {
+	position: relative;
+}
+
+.menu-btn-wrapper .menu-btn,
+.menu-btn-wrapper .menu-btn:before,
+.menu-btn-wrapper .menu-btn:after {
+	width: 24px;
+	height: 3px;
+	border-radius: 10px;
+	background-color: #fff;
+}
+
+.menu-btn-wrapper .menu-btn:before {
+	top: -7px;
+}
+
+.menu-btn-wrapper .menu-btn:after {
+	top: 7px;
+}
+
+.menu-btn-wrapper .menu-btn:before,
+.menu-btn-wrapper .menu-btn:after {
+	content: "";
+	position: absolute;
+	left: 0;
+}
+
+.main {
+	background-color: rgb(125, 174, 218);
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin-top: 44px;
+}
+
+/*________________________________________________________________________________________________________*/
+
+.sidebar {
+	height: 100%;
+	width: 0;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: hsl(0, 0%, 16%);
+	color: #fff;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 30px;
+}
+
+.sidebar .nav-items {
+	width: 100%;
+	height: fit-content;
+	margin-right: 3px;
+}
+
+.sidebar .nav-items .nav-item {
+	display: flex;
+	/* justify-content: center; */
+	align-items: center;
+	flex-direction: row;
+	font-size: 14px;
+	color: #ffffffde;
+	padding: 5px 18px 5px 5px;
+	border-radius: 5px;
+}
+
+.sidebar .nav-items .nav-item:hover {
+	background-color: #363636;
+}
+
+.sidebar .nav-items .nav-item .nav-item-icon {
+	margin-right: 8px;
+}
+
+.sidebar .nav-items .nav-item .nav-item-icon.inbox {
+	color: #5297ff;
+}
+
+.sidebar .nav-items .nav-item .nav-item-icon.today {
+	color: #25b84c;
+}
+
+.sidebar .nav-items .nav-item .nav-item-icon.upcoming {
+	color: #a970ff;
+}
+
+#content {
+	transition: margin-left 0.5s;
+	padding: 20px;
+}
