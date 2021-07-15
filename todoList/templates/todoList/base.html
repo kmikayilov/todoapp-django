@@ -10,10 +10,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'todoList/css/bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'todoList/css/components.css' %}">
     <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="{% static 'todoList/js/main.js' %}" type="text/javascript"></script>
     {% block css_files %}{% endblock %}
 </head>
 <body>
@@ -22,13 +22,6 @@
             <div class="menu-btn-wrapper" onclick="toggleNav()"><div class="menu-btn"></div></div>
             <!-- <nav></nav> -->
         </header>
-        <div class="main">
-            {% include "./includes/sidebar.html" %}
-            <div id="content" class="content">
-                {% block content %}
-                {% endblock%}
-            </div>
-        </div>
     </div>
 </body>
 </html>
