@@ -12,24 +12,113 @@
 	z-index: 5;
 }
 
-.btn-wrapper {
+.btns-wrapper {
+	width: fit-content;
 	height: 100%;
-	width: 28px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: hsla(0, 0%, 100%, 0.87);
-}
-
-.btn-wrapper svg {
-	width: 24px;
-	height: 24px;
-}
-
-.menu {
 	margin-left: 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-wrapper {
+	color: hsla(0, 0%, 100%, 0.87);
+	background-color: transparent;
+	border: none;
 }
 
 .home {
 	margin-left: 4px;
+}
+
+.input-wrapper {
+	margin-left: 10px;
+	width: 450px;
+	height: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	color: hsla(0, 0%, 100%, 0.87);
+	position: relative;
+}
+
+.input-wrapper .form-control {
+	background-color: hsl(0, 0%, 21%);
+	border-color: hsl(0, 0%, 21%);
+	padding-left: 34px;
+	width: 200px;
+	height: 30px;
+	color: hsla(0, 0%, 100%, 0.87);
+	transition: width 0.1s ease;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.input-wrapper .form-control:focus {
+	outline: none;
+	border-color: hsl(0, 0%, 21%);
+	box-shadow: none;
+	width: 450px;
+}
+
+.input-wrapper .form-control::placeholder {
+	color: hsla(0, 0%, 100%, 0.87);
+}
+
+.icon-wrapper {
+	padding: 0 2px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 28px;
+	height: 100%;
+}
+
+.icon-wrapper svg {
+	width: 24px;
+	height: 24px;
+}
+
+.input-wrapper .search-icon-wrapper {
+	/* margin-right: -28px; */
+	z-index: 10;
+	position: absolute;
+	top: 50%;
+	left: 2px;
+	transform: translateY(-50%);
+}
+
+.input-wrapper .search-icon-wrapper .search-icon {
+	width: 24px;
+	height: 24px;
+}
+
+.input-wrapper .help-icon-wrapper {
+	position: absolute;
+	top: 50%;
+	right: 38px;
+	transform: translateY(-50%);
+	z-index: 10;
+}
+
+.input-wrapper .close-icon-wrapper {
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	transform: translateY(-50%);
+	z-index: 10;
+}
+
+.input-wrapper .help-icon-wrapper .help-icon {
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+}
+
+.form-control:not(:focus) ~ .help-icon-wrapper,
+.form-control:not(:focus) ~ .close-icon-wrapper {
+	display: none;
 }
