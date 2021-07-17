@@ -1,0 +1,8 @@
+<div class="task">
+    <form method="POST" action="{% url "task-done" %}">
+        {% csrf_token %}
+        <input type="text" hidden value="{{task.id}}" name="task-id">
+        <button type="submit" class="priority"></button>
+    </form>
+    <div class="task-name">{{task.task}}</div>
+</div>

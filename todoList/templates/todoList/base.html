@@ -7,9 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{%endblock%}</title>
-    <!-- <link rel="apple-touch-startup-image" sizes="920x920" href="{% static 'todoList/images/todo-logo.png' %}"> -->
     <link rel="stylesheet" type="text/css" href="{% static 'todoList/css/bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'todoList/css/components.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'todoList/css/includes/header.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'todoList/css/includes/sidebar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'todoList/css/includes/todoTask.css' %}">
     
     <script src="{% static 'todoList/js/main.js' %}" ></script>
     <script src="{% static 'todoList/js/bootstrap.min.js' %}" ></script>
@@ -21,7 +23,7 @@
         <div class="main">
             {% include "./includes/sidebar.html" %}
             <div class="content" id="content">
-
+                {% block content %}{% endblock %}
             </div>
         </div>
     </div>

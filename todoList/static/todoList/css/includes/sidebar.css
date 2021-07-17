@@ -1,6 +1,6 @@
 .sidebar {
 	height: 100%;
-	width: 0;
+	width: 305px;
 	position: absolute;
 	z-index: 1;
 	top: 0;
@@ -11,6 +11,7 @@
 	transition: 0.5s;
 	padding-top: 30px;
 	padding-right: 5px;
+	padding-left: 35px;
 }
 
 .sidebar .nav-items {
@@ -30,6 +31,7 @@
 }
 
 .sidebar .nav-items .nav-item .nav-item-link {
+	width: 100%;
 	display: flex;
 	align-items: center;
 	flex-direction: row;
@@ -37,6 +39,7 @@
 	color: #ffffffde;
 }
 
+.sidebar .nav-items .nav-item.active,
 .sidebar .nav-items .nav-item:hover {
 	background-color: #363636;
 }

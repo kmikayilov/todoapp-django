@@ -8,4 +8,5 @@ urlpatterns = [
     path('app/today/', views.todayTodo, name="today-tasks"),
     path('app/upcoming/', views.upcomingTodo, name="upcoming-tasks"),
     path('app/inbox/', views.inboxTodo, name="inbox-tasks"),
+    path('app/task-done/', views.taskDone, name="task-done"),
 ]

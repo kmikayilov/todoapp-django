@@ -1,11 +1,5 @@
-{% load static %}
-
-{% block css_files%}
-    <link rel="stylesheet" type="text/css" href="{% static 'todoList/css/includes/sidebar.css' %}">
-{% endblock %}
-
 <div id="sidebar" class="sidebar">
-    <ul class="nav-items">
+    <ul class="nav-items" id="navigation-items">
         <li class="nav-item">
             <a class="nav-item-link" href="{% url 'inbox-tasks' %}">
                 <div class="nav-item-icon inbox">
@@ -47,6 +41,6 @@
                 </div>
                 <div class="nav-item-text">Upcoming</div>
             </a>
-        </div>
+        </li>
     </ul>
 </div>
