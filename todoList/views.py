@@ -13,7 +13,7 @@ def startingPage(request):
 
 def todayTodo(request):
     d = date.today().strftime("%a %d %B")
-    tasks = TodoTask.objects.all()
+    tasks = TodoTask.objects.order_by('priority')
 
     if request.method == 'POST': 
         form = TodoTaskForm(request.POST)
@@ -23,7 +23,7 @@ def todayTodo(request):
             return HttpResponseRedirect("/app/today")
 
     else:
-        form = TodoTaskForm()
+        form = TodoTaskForm(initial={'time': date.today()})
 
     return render(request, 'todoList/todayTodoPage.html', {
         "date": d,

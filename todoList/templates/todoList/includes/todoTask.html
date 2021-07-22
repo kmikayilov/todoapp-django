@@ -1,8 +1,29 @@
 <div class="task">
-    <form method="POST" action="{% url "task-done" %}">
-        {% csrf_token %}
-        <input type="text" hidden value="{{task.id}}" name="task-id">
-        <button type="submit" class="priority"></button>
-    </form>
-    <div class="task-name">{{task.task}}</div>
+    
+    <div class="task-wrapper">
+        <form class="task-deletion-form" method="POST" action="{% url "task-done" %}">
+            {% csrf_token %}
+            <input type="text" hidden value="{{task.id}}" name="task-id">
+            <button type="submit" class="task-checkbox priority_{{task.priority.rank}}">
+                <div class="circle">
+                    <svg width="24" height="24">
+                        <path fill="currentColor" d="M11.23 13.7l-2.15-2a.55.55 0 0 0-.74-.01l.03-.03a.46.46 0 0 0 0 .68L11.24 15l5.4-5.01a.45.45 0 0 0 0-.68l.02.03a.55.55 0 0 0-.73 0l-4.7 4.35z"></path>
+                    </svg>
+                </div>
+            </button>
+        </form>
+        <div class="task-info-wrapper">
+            <div class="task-name">{{task.task}}</div>
+            <div class="task-desc">{{task.description}}</div>
+            <!-- <div class="task-time">{{task.time}}</div> -->
+        </div>
+        <div class="task-actions-wrapper">
+            <div class="task">x</div>
+            <div class="task">y</div>
+            <div class="task">z</div>
+        </div>
+    </div>
+    <div class="project-wrapper">
+        <div class="project {{task.project|lower}}">{{task.project}}</div>
+    </div>
 </div>

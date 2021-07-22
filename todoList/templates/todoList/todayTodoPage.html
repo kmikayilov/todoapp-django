@@ -6,6 +6,7 @@ Today: Todoist
 {% endblock %} 
 
 
+
 {% block content %} 
 <div class="inner-content">
     <h1 class="title">
@@ -14,16 +15,23 @@ Today: Todoist
     {% for task in tasks%}
     {% include './includes/todoTask.html' %}
     {% endfor %}
-    <form action="{% url 'today-tasks' %}" method="POST">
+    <form class="new-task-form" action="{% url 'today-tasks' %}" method="POST">
         {% csrf_token %}
-        {% for field in form %}
-          <div class="form-control {% if field.errors %}errors{% endif %}">
-            {{ field.label_tag }}
-            {{ field }}
-            {{ field.errors }}
+        <div class="inputs-wrapper">
+          <div class="task-input-wrapper">{{form.task}}</div>
+          <div class="desc-input-wrapper">{{form.description}}</div>
+          <div class="add-input-wrapper">
+            {{form.time}}
+            {{form.project}}
+            {{form.label}}
+            {{form.priority}}
+            {{form.reminder}}
           </div>
-        {% endfor %}
-        <button type="submit">Send</button>
+        </div>
+        <!-- {% for field in form %}
+          {{ field }}
+        {% endfor %} -->
+        <button type="submit">Add task</button>
       </form>
 </div>
 {% endblock %} 
