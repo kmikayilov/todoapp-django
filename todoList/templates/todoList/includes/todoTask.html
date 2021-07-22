@@ -1,7 +1,6 @@
 <div class="task">
-    
     <div class="task-wrapper">
-        <form class="task-deletion-form" method="POST" action="{% url "task-done" %}">
+        <form class="task-deletion-form" method="POST" action="{% url 'task-done' %}">
             {% csrf_token %}
             <input type="text" hidden value="{{task.id}}" name="task-id">
             <button type="submit" class="task-checkbox priority_{{task.priority.rank}}">
@@ -15,7 +14,7 @@
         <div class="task-info-wrapper">
             <div class="task-name">{{task.task}}</div>
             <div class="task-desc">{{task.description}}</div>
-            <!-- <div class="task-time">{{task.time}}</div> -->
+            {% if url == "project" %}<div class="task-time">{{task.time}}</div>{% endif %}
         </div>
         <div class="task-actions-wrapper">
             <div class="task">x</div>
@@ -23,7 +22,9 @@
             <div class="task">z</div>
         </div>
     </div>
+    {% if url != "project" %}
     <div class="project-wrapper">
-        <div class="project {{task.project|lower}}">{{task.project}}</div>
+        <a href="{% url 'project-detail' task.project.id %}" class="project {{task.project|lower}}">{{task.project}}</a>
     </div>
+    {% endif %}
 </div>

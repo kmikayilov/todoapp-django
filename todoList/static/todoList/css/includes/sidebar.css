@@ -48,6 +48,12 @@
 	margin-right: 8px;
 }
 
+.sidebar .nav-items .nav-item .nav-item-icon img,
+.sidebar .nav-items .nav-item .nav-item-icon svg {
+	width: 24px;
+	height: 24px;
+}
+
 .sidebar .nav-items .nav-item .nav-item-icon.inbox {
 	color: #5297ff;
 }

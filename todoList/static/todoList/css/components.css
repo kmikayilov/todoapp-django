@@ -37,27 +37,27 @@
 	width: 100%;
 	/* max-width: 800px; */
 	/* width: 800px; */
-} 
+}
 
 #content .inner-content .title {
 	width: 100%;
 	display: flex;
-	align-items: center;
-	border-bottom: 1px solid hsla(0,0%,100%,.1);
+	align-items: flex-end;
+	border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
 	padding-bottom: 8px;
 }
 
-#content .inner-content .title .today {
+#content .inner-content .title .name {
 	font-size: 20px;
-    font-weight: 700;
-    line-height: 25px;
+	font-weight: 700;
+	line-height: 25px;
 }
 
 #content .inner-content .title .date {
 	color: grey;
-    margin-left: 6px;
-    font-size: 12px;
-    font-weight: 400;
+	margin-left: 6px;
+	font-size: 12px;
+	font-weight: 400;
 }
 
 #content .inner-content .new-task-form {
@@ -69,19 +69,18 @@
 	margin-top: 10px;
 }
 
-#content .inner-content .new-task-form .inputs-wrapper{
+#content .inner-content .new-task-form .inputs-wrapper {
 	width: 100%;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	
+
 	margin-bottom: 5px;
 	background-color: hsl(0, 0%, 9%);
-	border: 1px solid hsla(0,0%,100%,.1);
+	border: 1px solid hsla(0, 0%, 100%, 0.1);
 	border-radius: 5px;
 	padding: 10px 10px 0;
 	cursor: text;
-
 }
 
 #content .inner-content .new-task-form .inputs-wrapper input {
@@ -95,31 +94,27 @@
 	outline: none;
 }
 
-#content .inner-content .new-task-form .inputs-wrapper input[name='task'] {
+#content .inner-content .new-task-form .inputs-wrapper input[name="task"] {
 	width: 100%;
 	height: 100%;
-
 }
 
-#content .inner-content .new-task-form .inputs-wrapper input[name='comment'] {
-	
+#content .inner-content .new-task-form .inputs-wrapper input[name="comment"] {
 }
 
-#content .inner-content .new-task-form .inputs-wrapper input[name='project'] {
-	
+#content .inner-content .new-task-form .inputs-wrapper input[name="project"] {
 }
-
 
 #content .inner-content .new-task-form .inputs-wrapper #id_priority,
 #content .inner-content .new-task-form .inputs-wrapper #id_label,
 #content .inner-content .new-task-form .inputs-wrapper #id_project {
 	width: 26px;
-	color:hsl(0, 0%, 100%);
+	color: hsl(0, 0%, 100%);
 	appearance: none;
-	
+
 	background-color: hsl(0, 0%, 16%);
-    border: 1px solid hsl(0, 0%, 9%);
-    box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+	border: 1px solid hsl(0, 0%, 9%);
+	box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
 	/* margin-bottom: 10px; */
 }
 
@@ -139,49 +134,42 @@
 	width: 24px;
 }
 
-
-#content .inner-content .new-task-form .inputs-wrapper .add-input-wrapper #id_project{
+#content .inner-content .new-task-form .inputs-wrapper .add-input-wrapper #id_project {
 	margin-right: auto;
 }
 
 #content .inner-content .new-task-form .inputs-wrapper #id_priority option,
 #content .inner-content .new-task-form .inputs-wrapper #id_label option,
 #content .inner-content .new-task-form .inputs-wrapper #id_project option {
-	
 }
 
 #content .inner-content .new-task-form .inputs-wrapper #id_priority {
-	
 }
 
 #content .inner-content .new-task-form .inputs-wrapper #id_priority option {
-	
 }
-
 
 #content .inner-content .new-task-form .inputs-wrapper #id_label {
 }
 
 #content .inner-content .new-task-form .inputs-wrapper #id_label option {
-	
 }
 
 #content .inner-content .new-task-form button {
 	background-color: hsl(1, 69%, 58%);
 	color: hsl(0, 0%, 100%);
 	text-shadow: none;
-    border: 1px solid transparent;
+	border: 1px solid transparent;
 	width: fit-content;
-	
+
 	font-weight: 700;
-    font-size: 13px;
-    line-height: 17px;
-    text-decoration: none;
-    padding: 6px 12px 7px;
-    white-space: nowrap;
-    border-radius: 3px;
-    text-align: center;
-	
+	font-size: 13px;
+	line-height: 17px;
+	text-decoration: none;
+	padding: 6px 12px 7px;
+	white-space: nowrap;
+	border-radius: 3px;
+	text-align: center;
+
 	margin-right: 5px;
 }
-
