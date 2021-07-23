@@ -14,7 +14,7 @@
         <div class="task-info-wrapper">
             <div class="task-name">{{task.task}}</div>
             <div class="task-desc">{{task.description}}</div>
-            {% if url == "project" %}<div class="task-time">{{task.time}}</div>{% endif %}
+            {% if url == "project" or url == "upcoming" %}<div class="task-time">{{task.time}}</div>{% endif %}
         </div>
         <div class="task-actions-wrapper">
             <div class="task">x</div>

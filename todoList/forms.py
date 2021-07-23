@@ -11,7 +11,10 @@ class TodoTaskForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'task': forms.TextInput(attrs={'placeholder': 'Task name'}),
-            'description': forms.TextInput(attrs={'placeholder': 'Description'}),
-            'time': DateInput(),
-            'reminder': DateInput(),
+            'description': forms.Textarea(attrs={'placeholder': 'Description', 'rows': '3'}),
+            'label': forms.Select(attrs={'class': 'form-select', 'placeholder': 'Select...'}),
+            'project': forms.Select(attrs={'class': 'form-select'}),
+            'priority': forms.Select(attrs={'class': 'form-select'}),
+            'time': DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'reminder': DateInput(attrs={'class': 'form-control', 'type': 'date'}),
         }

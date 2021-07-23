@@ -23,4 +23,18 @@ const setActive = () => {
 	}
 }
   
-  window.onload = setActive;
+window.onload = setActive;
+
+
+const toggleTaskForm = () => {
+	let isClosed = false
+	const form = document.querySelector(".new-task-form");
+	form.classList.forEach(c => isClosed = c === 'closed' ? true : false );
+
+	if (isClosed) {
+		form.classList.remove('closed');
+		form.querySelector("input[name='task']").focus()
+	}
+	else form.classList.add('closed')
+	
+}

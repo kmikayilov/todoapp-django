@@ -1,21 +1,19 @@
 {% load static %}
-{% load todoList_filters %}
 
 <div id="sidebar" class="sidebar">
-    {{inbox_id|trim}}
     <ul class="nav-items" id="navigation-items">
         <li class="nav-item">
-            <a class="nav-item-link" href="{% url 'project-detail' 1 %}">
+            <a class="nav-item-link" href="{% url 'project-detail' inbox_id %}">
                 <div class="nav-item-icon inbox">
                     <img src="{% static 'todoList/icons/inbox-icon.svg' %}" alt="upcoming-icon">
                 </div>
                 <div class="nav-item-text">Inbox</div>
+                <div class="nav-item-task-count">{{all_tasks.inbox|length}}</div>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-item-link" href="{% url 'today-tasks' %}">
                 <div class="nav-item-icon today">
-                    <!-- <img src="{% static 'todoList/icons/today-icon.svg' %}" alt="upcoming-icon"> -->
                     <svg width="24" height="24" viewBox="0 0 24 24">
                         <g fill="currentColor" fill-rule="evenodd">
                             <path fill-rule="nonzero" d="M6 4.5h12A1.5 1.5 0 0 1 19.5 6v2.5h-15V6A1.5 1.5 0 0 1 6 4.5z" opacity=".1"></path>
@@ -27,6 +25,7 @@
                     </svg>
                 </div>
                 <div class="nav-item-text">Today</div>
+                <div class="nav-item-task-count">{{all_tasks.today|length}}</div>
             </a>
         </li>
         <li class="nav-item">
@@ -35,6 +34,7 @@
                     <img src="{% static 'todoList/icons/upcoming-icon.svg' %}" alt="upcoming-icon">
                 </div>
                 <div class="nav-item-text">Upcoming</div>
+                <div class="nav-item-task-count">{{all_tasks.upcoming|length}}</div>
             </a>
         </li>
     </ul>

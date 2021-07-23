@@ -1,0 +1,214 @@
+.new-task-form {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.new-task-form .add-task {
+    display: none;
+}
+
+.new-task-form.closed .inputs-wrapper,
+.new-task-form.closed .btns {
+    display: none;
+}
+
+.new-task-form.closed .add-task {
+    display: block;
+    color: grey !important;
+    text-decoration: none;
+
+	text-shadow: none;
+    background-color: transparent;
+	border: 1px solid transparent;
+	width: 100%;
+    height: 100%;
+
+	font-size: 14px;
+	/* line-height: 17px; */
+	/* padding: 6px 12px 7px; */
+	white-space: nowrap;
+	border-radius: 3px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.new-task-form.closed .add-task .icon-add {
+    border-radius: 50%;
+    color: #de4c4a !important;
+    width: 17px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.new-task-form.closed .add-task .icon-add svg {
+    width: 13px;
+    height: 13px;
+}
+
+.new-task-form.closed .add-task:hover {
+    color: #de4c4a !important;
+}
+
+.new-task-form.closed .add-task:hover .icon-add {
+    color: #fff !important;
+    background-color: #de4c4a;
+}
+
+.new-task-form .inputs-wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	margin-bottom: 5px;
+	background-color: hsl(0, 0%, 9%);
+	border: 1px solid hsla(0, 0%, 100%, 0.1);
+	border-radius: 5px;
+	padding: 10px 10px 0;
+	cursor: text;
+}
+
+.new-task-form .inputs-wrapper input {
+	background-color: transparent;
+	border: none;
+	color: white;
+}
+
+.new-task-form .inputs-wrapper input:focus {
+	border: none;
+	outline: none;
+}
+
+.new-task-form .inputs-wrapper input[name="task"] {
+	width: 100%;
+	height: 21px;
+
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.new-task-form .inputs-wrapper textarea[name="description"] {
+	width: 100%;
+    color: white;
+    background-color: transparent;
+    border: none;
+    margin: 8px 0 0;
+    padding: 1px;
+    width: 100%;
+    font-size: 13px;
+    line-height: 18px;
+    overflow: hidden;
+    resize: none;
+}
+
+.new-task-form .inputs-wrapper textarea[name="description"]:focus {
+    outline: none;
+}
+
+.new-task-form .inputs-wrapper input[name="comment"] {
+}
+
+.new-task-form .inputs-wrapper input[name="project"] {
+}
+
+.new-task-form .inputs-wrapper #id_priority,
+.new-task-form .inputs-wrapper #id_label,
+.new-task-form .inputs-wrapper #id_project {
+	/* width: 26px; */
+    width: fit-content;
+	color: hsl(0, 0%, 100%);
+	appearance: none;
+
+	background-color: hsl(0, 0%, 16%);
+	border: 1px solid hsl(0, 0%, 9%);
+	box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+	/* margin-bottom: 10px; */
+}
+
+.new-task-form .inputs-wrapper .add-input-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.new-task-form .inputs-wrapper .add-input-wrapper #id_time,
+.new-task-form .inputs-wrapper .add-input-wrapper #id_project {
+	width: fit-content;
+}
+
+.new-task-form .inputs-wrapper .add-input-wrapper #id_reminder {
+	width: fit-content;
+}
+
+.new-task-form .inputs-wrapper .add-input-wrapper #id_project {
+	margin-right: auto;
+}
+
+.new-task-form .inputs-wrapper #id_priority option,
+.new-task-form .inputs-wrapper #id_label option,
+.new-task-form .inputs-wrapper #id_project option {
+}
+
+.new-task-form .inputs-wrapper #id_priority {
+}
+
+.new-task-form .inputs-wrapper #id_priority option {
+}
+
+.new-task-form .inputs-wrapper #id_label {
+}
+
+.new-task-form .inputs-wrapper #id_label option {
+}
+
+.new-task-form .btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 12px;
+}
+
+.new-task-form .btn {
+	color: hsl(0, 0%, 100%);
+	text-shadow: none;
+	border: 1px solid transparent;
+	width: fit-content;
+    height: 100%;
+
+	font-weight: 700;
+	font-size: 13px;
+	line-height: 17px;
+	text-decoration: none;
+	padding: 6px 12px 7px;
+	white-space: nowrap;
+	border-radius: 3px;
+	text-align: center;
+}
+
+.new-task-form .submit {
+	background-color: hsl(1, 69%, 58%);
+	margin-right: 12px;
+}
+
+.new-task-form .cancel {
+    color: hsla(0,0%,100%,.88);
+    background-color: transparent;
+    border-color: #525252
+}
+
+.new-task-form .cancel:hover {
+    background-color: #3d3d3d;
+    border-color: #393939;
+}

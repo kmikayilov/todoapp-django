@@ -65,3 +65,19 @@
 .sidebar .nav-items .nav-item .nav-item-icon.upcoming {
 	color: #a970ff;
 }
+
+.sidebar .nav-items .nav-item .nav-item-text{
+	flex: 1;
+}
+
+
+
+.sidebar .nav-items .nav-item .nav-item-task-count {
+	color: #777;
+    margin-left: auto;
+    padding-left: 5px;
+    display: inline-block;
+    font-size: 12px;
+    /* margin-left: 5px; */
+    line-height: 22px;
+}

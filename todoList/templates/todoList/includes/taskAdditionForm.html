@@ -1,0 +1,23 @@
+<button class="add-task" onclick="toggleTaskForm()">
+    <span class="icon-add">
+      <svg width="13" height="13">
+        <path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" fill="currentColor" fill-rule="evenodd"></path>
+      </svg>
+    </span>
+    Add task
+</button>
+<div class="inputs-wrapper">
+    <div class="task-input-wrapper">{{form.task}}</div>
+    <div class="desc-input-wrapper">{{form.description}}</div>
+    <div class="add-input-wrapper">
+      {{form.time}}
+      {{form.project}}
+      {{form.label}}
+      {{form.priority}}
+      <!-- {{form.reminder}} -->
+    </div>
+</div>
+<div class="btns">
+    <button type="submit" class="btn submit">Add task</button>
+    <button type="button" class="btn cancel" onclick="toggleTaskForm()">Cancel</button>
+</div>

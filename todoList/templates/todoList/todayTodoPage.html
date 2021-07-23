@@ -6,28 +6,15 @@ Today: Todoist
 {% endblock %} 
 
 {% block content %} 
-<div class="inner-content">
     <h1 class="title">
-        <span class="name">Today</span> <span class="date">{{ date }}</span>
+      <span class="name">Today</span> <span class="date">{{ date }}</span>
     </h1>
-    {% for task in tasks%}
+    {% for task in all_tasks.today %}
     {% include './includes/todoTask.html' %}
     {% endfor %}
-    <form class="new-task-form" action="{% url 'today-tasks' %}" method="POST">
-        {% csrf_token %}
-        <div class="inputs-wrapper">
-          <div class="task-input-wrapper">{{form.task}}</div>
-          <div class="desc-input-wrapper">{{form.description}}</div>
-          <div class="add-input-wrapper">
-            {{form.time}}
-            {{form.project}}
-            {{form.label}}
-            {{form.priority}}
-            {{form.reminder}}
-          </div>
-        </div>
-        <button type="submit">Add task</button>
-      </form>
-</div>
+    <form class="new-task-form closed" action="{% url 'today-tasks' %}" method="POST">
+      {% csrf_token %}
+      {% include './includes/taskAdditionForm.html' %}
+    </form>
 {% endblock %} 
 
