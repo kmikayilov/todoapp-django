@@ -1,0 +1,160 @@
+* {
+	user-select: none; 
+	-webkit-user-select: none; 
+	-moz-user-select: none; 
+	-ms-user-select: none; 
+}
+
+.app {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+
+    & .main {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-top: 44px;
+        
+        & .content {
+            width: 100%;
+            background-color: hsl(0, 0%, 12%);
+            color: #fff;
+            
+            padding: 30px 55px 50px 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            overflow-y: auto;
+            
+            /* min-height: 380px; */
+            height: 100%;
+            
+            margin-left: 305px;
+            border-right: 1px solid #f1f1f1;
+            transition: margin-left .5s;
+
+            &::-webkit-scrollbar {
+                width: 7px;
+                height: 7px;
+            }
+
+            &::-webkit-scrollbar-button {
+                display: none;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                background: #8b8b8b;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: #171717;
+            }
+
+            & .title {
+                width: 100%;
+                display: flex;
+                align-items: flex-end;
+                border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+                padding-bottom: 8px;
+                
+                & .name {
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 25px;
+                }
+                
+                & .date {
+                    color: grey;
+                    margin-left: 6px;
+                    font-size: 12px;
+                    font-weight: 400;
+                }
+            }
+
+        }
+
+                
+        & .nav-items {
+            width: 100%;
+            height: fit-content;
+            padding: 0;
+            
+            & .nav-item {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                font-size: 14px;
+                color: #ffffffde;
+                padding: 5px 18px 5px 5px;
+                border-radius: 5px;
+                
+                &:hover,
+                &:active {
+                    background-color: #363636;
+                }
+                
+                & .nav-item-link {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    text-decoration: none;
+                    color: #ffffffde;
+                }
+                
+                & .nav-item-icon {
+                    margin-right: 8px;
+                    
+                    img, svg {
+                        width: 24px;
+                        height: 24px;
+                    }
+                    
+                    &.inbox {
+                        color: #5297ff;
+                    }
+                    
+                    &.today {
+                        color: #25b84c;
+                    }
+                    
+                    &.upcoming {
+                        color: #a970ff;
+                    }
+                }
+                
+                & .nav-item-text {
+                    flex: 1;
+                }
+                
+                & .nav-item-task-count {
+                    color: #777;
+                    margin-left: auto;
+                    padding-left: 5px;
+                    display: inline-block;
+                    font-size: 12px;
+                    line-height: 22px;
+                }
+                
+            }
+        }
+    }
+
+    .btn {
+        color: hsla(0, 0%, 100%, 0.87);
+        background-color: transparent;
+        border: none;
+
+        &:hover,
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+}
+

@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="icon" href="data:;base64,=">
     <title>{% block title %}{%endblock%}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'todoList/css/bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'todoList/css/components.css' %}">
@@ -13,9 +15,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'todoList/css/includes/sidebar.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'todoList/css/includes/todoTask.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'todoList/css/includes/addTaskForm.css' %}">
-    
-    <script src="{% static 'todoList/js/main.js' %}" ></script>
+
     <script src="{% static 'todoList/js/bootstrap.min.js' %}" ></script>
+    <script src="{% static 'todoList/js/main.js' %}" ></script>
     {% block css_files %}{% endblock %}
 </head>
 <body>
@@ -28,5 +30,41 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        var data = null;
+        var forms = null
+                
+        window.onload = () => {
+            forms = document.querySelectorAll('.new-task-form')
+
+            for (var i = 0 ; i < forms.length; i++) {
+                forms[i].addEventListener('click' , function(e) {
+                    
+                    let isClosed = false
+                    let addTaskBtn = this.querySelector(".add-task")        
+                    let cancelBtn = this.querySelector(".cancel")
+                   
+                    if (e.target == cancelBtn || e.target == addTaskBtn) {
+                        this.classList.forEach(c => isClosed = c === 'closed' ? true : false );
+                        if (isClosed) {
+                            this.classList.remove('closed');
+                            this.querySelector("input[name='task']").focus()
+                        }
+                        else this.classList.add('closed')	
+                    } 
+                    
+                    
+                } , false ); 
+            }            
+
+            anchors = document.querySelectorAll('.nav-item');
+            for(let i=0; i < anchors.length; i++) { 
+                if(document.location.href.indexOf(anchors[i].querySelector('a').href)>=0) {
+                    anchors[i].classList.add("active");
+                }
+            }
+        }
+    </script>
 </body>
 </html>
+

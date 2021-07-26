@@ -3,12 +3,18 @@
 <div id="sidebar" class="sidebar">
     <ul class="nav-items" id="navigation-items">
         <li class="nav-item">
-            <a class="nav-item-link" href="{% url 'project-detail' inbox_id %}">
+            <a class="nav-item-link" href="{% url 'project-detail' 'inbox' %}">
                 <div class="nav-item-icon inbox">
                     <img src="{% static 'todoList/icons/inbox-icon.svg' %}" alt="upcoming-icon">
                 </div>
                 <div class="nav-item-text">Inbox</div>
-                <div class="nav-item-task-count">{{all_tasks.inbox|length}}</div>
+                <div class="nav-item-task-count">
+                    {% for proj in all_tasks_count.projects %}
+                        {% if proj.name == 'Inbox' %}
+                            {{proj.task_count}}
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </a>
         </li>
         <li class="nav-item">
@@ -25,7 +31,7 @@
                     </svg>
                 </div>
                 <div class="nav-item-text">Today</div>
-                <div class="nav-item-task-count">{{all_tasks.today|length}}</div>
+                <div class="nav-item-task-count">{{all_tasks_count.today}}</div>
             </a>
         </li>
         <li class="nav-item">
@@ -34,8 +40,74 @@
                     <img src="{% static 'todoList/icons/upcoming-icon.svg' %}" alt="upcoming-icon">
                 </div>
                 <div class="nav-item-text">Upcoming</div>
-                <div class="nav-item-task-count">{{all_tasks.upcoming|length}}</div>
+                <div class="nav-item-task-count">{{all_tasks_count.upcoming}}</div>
             </a>
         </li>
     </ul>
+    <div class="projects sidebar-wrapper">
+        <div class="title-wrapper">
+            <button class="btn nav-header" onclick="toggleSideNav('projects')">
+                <div class="toggle-icon">
+                    <svg width="16px" height="16px" viewBox="0 0 16 16">
+                        <g transform="translate(-266, -17)" fill="#777777">
+                            <path  d="M280,22.7581818 L279.1564,22 L273.9922,26.506 L273.4414,26.0254545 L273.4444,26.0281818 L268.8562,22.0245455 L268,22.7712727 C269.2678,23.878 272.8084,26.9674545 273.9922,28 C274.8718,27.2330909 274.0144,27.9809091 280,22.7581818"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="title">Projects</div>
+            </button>
+            <button class="btn nav-actions" onclick="console.log('project addition')">
+                <div class="add-icon">
+                    <svg width="13" height="13">
+                        <path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+            </button>
+        </div>
+        <ul class="nav-items">
+            {% for project in all_tasks_count.projects %}
+                {% if project.name != 'Inbox' %}
+                <li class="nav-item">
+                    <a class="nav-item-link" href="{% url 'project-detail' project.name|lower %}">
+                        <div class="nav-item-icon"><div class="icon {{project.color.name}}"></div></div>
+                        <div class="nav-item-text">{{project.name}}</div>
+                        <div class="nav-item-task-count">{{project.task_count}}</div>
+                    </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="labels sidebar-wrapper">
+        <div class="title-wrapper">
+            <button class="btn nav-header" onclick="toggleSideNav('labels')">
+                <div class="toggle-icon">
+                    <svg width="16px" height="16px" viewBox="0 0 16 16">
+                        <g transform="translate(-266, -17)" fill="#777777">
+                            <path  d="M280,22.7581818 L279.1564,22 L273.9922,26.506 L273.4414,26.0254545 L273.4444,26.0281818 L268.8562,22.0245455 L268,22.7712727 C269.2678,23.878 272.8084,26.9674545 273.9922,28 C274.8718,27.2330909 274.0144,27.9809091 280,22.7581818"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="title">Labels</div>
+            </button>
+            <button class="btn nav-actions" onclick="console.log('project addition')">
+                <div class="add-icon">
+                    <svg width="13" height="13">
+                        <path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+            </button>
+        </div>
+        <ul class="nav-items">
+            {% for label in all_tasks_count.labels %}
+                <li class="nav-item">
+                    <a class="nav-item-link" href="{% url 'label-detail' label.name|lower %}">
+                        <div class="nav-item-icon"><div class="icon {{label.color|slugify}}"></div></div>
+                        <div class="nav-item-text">{{label.name}}</div>
+                        <div class="nav-item-task-count">{{label.task_count}}</div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>

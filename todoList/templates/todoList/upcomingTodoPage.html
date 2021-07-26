@@ -6,15 +6,8 @@ Today: Todoist
 {% endblock %} 
 
 {% block content %} 
-    <h1 class="title">
-      <span class="name">Upcoming</span>
-    </h1>
-    {% for task in all_tasks.upcoming %}
-    {% include './includes/todoTask.html' %}
+    {% for wrapperInfo in upcomingInfoArr %}
+    {% include './includes/dayWrapper.html' %}
     {% endfor %}
-    <form class="new-task-form closed" action="{% url 'upcoming-tasks' %}" method="POST">
-      {% csrf_token %}
-      {% include './includes/taskAdditionForm.html' %}
-    </form>
 {% endblock %} 
 

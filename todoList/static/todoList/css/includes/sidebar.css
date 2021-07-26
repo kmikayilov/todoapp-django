@@ -5,79 +5,143 @@
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color: hsl(0, 0%, 16%);
+	background-color: #292929;
 	color: #fff;
 	overflow-x: hidden;
 	transition: 0.5s;
-	padding-top: 30px;
-	padding-right: 5px;
-	padding-left: 35px;
+	padding: 30px 5px 0 35px;
 }
-
-.sidebar .nav-items {
+.sidebar .sidebar-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 	height: fit-content;
-	padding: 0;
 }
-
-.sidebar .nav-items .nav-item {
-	display: flex;
-	align-items: center;
-	flex-direction: row;
-	font-size: 14px;
-	color: #ffffffde;
-	padding: 5px 18px 5px 5px;
-	border-radius: 5px;
-}
-
-.sidebar .nav-items .nav-item .nav-item-link {
+.sidebar .sidebar-wrapper .title-wrapper {
 	width: 100%;
+	font-size: 20px;
+	color: #fff;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	/* padding-right: 3px; */
+	padding: 5px 10px 5px 8px;
+}
+.sidebar .sidebar-wrapper .title-wrapper .nav-header {
+	flex: 1;
 	display: flex;
 	align-items: center;
-	flex-direction: row;
-	text-decoration: none;
-	color: #ffffffde;
+	/* text-align: left; */
+	font-size: 14px;
+	/* color: #333; */
+	font-weight: 700;
+	padding: 10px 0;
+	color: hsla(0,0%,100%,.87);
+}
+.sidebar .sidebar-wrapper .title-wrapper .nav-header .toggle-icon {
+	width: 16px;
+	height: 16px;
+	/* margin-right: 5px; */
+	position: relative;
+	transform: rotate(-90deg);
+	transition: transform .15s cubic-bezier(.4,0,.2,1) 0ms,-webkit-transform .15s cubic-bezier(.4,0,.2,1) 0ms;
+}
+.sidebar .sidebar-wrapper .title-wrapper .nav-header .toggle-icon svg {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%) rotate(0deg);
+	width: 13px;
+	height: 13px;
+	/* color: #777777; */
 }
 
-.sidebar .nav-items .nav-item.active,
-.sidebar .nav-items .nav-item:hover {
-	background-color: #363636;
+.sidebar .sidebar-wrapper .title-wrapper .nav-header .title {
+	margin-left: 15px;
 }
 
-.sidebar .nav-items .nav-item .nav-item-icon {
-	margin-right: 8px;
-}
-
-.sidebar .nav-items .nav-item .nav-item-icon img,
-.sidebar .nav-items .nav-item .nav-item-icon svg {
+.sidebar .sidebar-wrapper .title-wrapper .nav-actions {
 	width: 24px;
 	height: 24px;
 }
 
-.sidebar .nav-items .nav-item .nav-item-icon.inbox {
-	color: #5297ff;
-}
-
-.sidebar .nav-items .nav-item .nav-item-icon.today {
-	color: #25b84c;
-}
-
-.sidebar .nav-items .nav-item .nav-item-icon.upcoming {
-	color: #a970ff;
-}
-
-.sidebar .nav-items .nav-item .nav-item-text{
-	flex: 1;
-}
-
-
-
-.sidebar .nav-items .nav-item .nav-item-task-count {
+.sidebar .sidebar-wrapper .title-wrapper .nav-actions .add-icon {
 	color: #777;
-    margin-left: auto;
-    padding-left: 5px;
-    display: inline-block;
-    font-size: 12px;
-    /* margin-left: 5px; */
-    line-height: 22px;
+	margin-left: auto;
+	padding: 0 5px;
+	font-size: 12px;
+	line-height: 22px;
+	display: none;
+	border-radius: 5px;
+	width: 24px;
+	height: 24px;
+	position: relative;
 }
+
+.sidebar .sidebar-wrapper .title-wrapper:hover .nav-actions .add-icon {
+	display: inline-block;
+}
+
+.sidebar .sidebar-wrapper .title-wrapper .nav-actions .add-icon:hover {
+	color: hsla(0,0%,100%,.87);
+    background-color: #4d4d4d;
+}
+.sidebar .sidebar-wrapper .title-wrapper .nav-actions .add-icon svg {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 13px;
+	height: 13px;
+}
+
+
+.sidebar .sidebar-wrapper .nav-items {
+	height: 0px;
+	overflow: hidden;
+
+	--charcoal:#808080;
+	--taupe:#ccac93;
+	--grey:	#b8b8b8;
+	--salmon:#ff8d85;
+	--magenta:#e05194;
+	--lavender: #eb96eb;
+	--violet:#af38eb;
+	--grape:#884dff;
+	--blue:	#4073ff;
+	--light-blue:#96c3eb;
+	--sky-blue:	#14aaf5;
+	--teal:	#158fad;
+	--mint-green: #6accbc;
+	--green:#299438;
+	--lime-green:#7ecc49;
+	--olive-green:#afb83b;
+	--yellow:#FAD000;
+	--orange:#FF9933;
+	--red: #DB4035;
+	--berry-red:#B8255F;
+}
+
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .berry-red { background-color: var(--berry-red); border-color: var(--berry-red);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .charcoal { background-color: var(--charcoal); border-color: var(--charcoal);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .taupe { background-color: var(--taupe); border-color: var(--taupe);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .grey { background-color: var(--grey); border-color: var(--grey);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .salmon { background-color: var(--salmon); border-color: var(--salmon);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .magenta { background-color: var(--magenta); border-color: var(--magenta);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .lavender { background-color: var(--lavender); border-color: var(--lavender);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .violet { background-color: var(--violet); border-color: var(--violet);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .grape { background-color: var(--grape); border-color: var(--grape);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .blue { background-color: var(--blue); border-color: var(--blue);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .light-blue { background-color: var(--light-blue); border-color: var(--light-blue);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .sky-blue { background-color: var(--sky-blue); border-color: var(--sky-blue);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .teal { background-color: var(--teal); border-color: var(--teal);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .mint-green { background-color: var(--mint-green); border-color: var(--mint-green);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .green { background-color: var(--green); border-color: var(--green);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .lime-green { background-color: var(--lime-green); border-color: var(--lime-green);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .olive-green { background-color: var(--olive-green); border-color: var(--olive-green);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .yellow { background-color: var(--yellow); border-color: var(--yellow);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .orange { background-color: var(--orange); border-color: var(--orange);}
+.sidebar .sidebar-wrapper .nav-items .nav-item .nav-item-link .red { background-color: var(--red); }

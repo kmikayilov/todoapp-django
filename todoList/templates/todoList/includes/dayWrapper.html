@@ -1,0 +1,33 @@
+<div style="margin-bottom: 70px;">
+    <h1 class="title"> 
+        <span class="name">{{wrapperInfo.date}}</span> 
+    </h1>
+    {% for task in wrapperInfo.tasks %}
+    {% include './todoTask.html' %}
+    {% endfor %}
+    <form autocomplete="off" id="{{wrapperInfo.date}}" class="new-task-form closed" action="{% url 'upcoming-tasks' %}" method="POST">
+        {% csrf_token %}
+        <button class="add-task">
+            <span class="icon-add">
+              <svg width="13" height="13">
+                <path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" fill="currentColor" fill-rule="evenodd"></path>
+              </svg>
+            </span>
+            Add task
+        </button>
+        <div class="inputs-wrapper">
+            <div class="task-input-wrapper">{{wrapperInfo.form.task}}</div>
+            <div class="desc-input-wrapper">{{wrapperInfo.form.description}}</div>
+            <div class="add-input-wrapper">
+              {{wrapperInfo.form.time}}
+              {{wrapperInfo.form.project}}
+              {{wrapperInfo.form.label}}
+              {{wrapperInfo.form.priority}}
+            </div>
+        </div>
+        <div class="btns">
+            <button type="submit" class="btn submit">Add task</button>
+            <button type="button" class="btn cancel">Cancel</button>
+        </div>
+    </form>
+</div>

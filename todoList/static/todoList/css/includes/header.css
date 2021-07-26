@@ -1,8 +1,8 @@
 .header {
 	width: 100%;
 	height: 44px;
-	background-color: hsl(0, 0%, 16%);
-	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 15%);
+	background-color: #292929;
+	box-shadow: 0 1px 3px 0 #000;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -11,8 +11,7 @@
 	left: 0;
 	z-index: 5;
 }
-
-.btns-wrapper {
+.header .btns-wrapper {
 	width: fit-content;
 	height: 100%;
 	margin-left: 40px;
@@ -21,55 +20,47 @@
 	justify-content: center;
 	align-items: center;
 }
-
-.btn-wrapper {
-	color: hsla(0, 0%, 100%, 0.87);
+.header .btns-wrapper .btn-wrapper {
+	color: rgba(255, 255, 255, 0.87);
 	background-color: transparent;
 	border: none;
 }
-
-.home {
+.header .btns-wrapper .btn-wrapper.home {
 	margin-left: 4px;
 	margin-right: 6px;
 }
-
-.input-wrapper {
-	/* margin-left: 10px; */
+.header .btns-wrapper .input-wrapper {
 	width: 450px;
 	height: 30px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	color: hsla(0, 0%, 100%, 0.87);
+	color: rgba(255, 255, 255, 0.87);
 	position: relative;
 }
-
-.input-wrapper .form-control {
-	background-color: hsl(0, 0%, 21%);
-	border-color: hsl(0, 0%, 21%);
+.header .btns-wrapper .input-wrapper .form-control {
+	background-color: #363636;
+	border-color: #363636;
 	padding-left: 34px;
 	width: 198px;
 	height: 30px;
-	color: hsla(0, 0%, 100%, 0.87);
+	color: rgba(255, 255, 255, 0.87);
 	transition: width 0.1s ease;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
-
-.input-wrapper .form-control:focus {
+.header .btns-wrapper .input-wrapper .form-control:focus {
 	outline: none;
-	border-color: hsl(0, 0%, 21%);
+	border-color: #363636;
 	box-shadow: none;
 	width: 450px;
 }
-
-.input-wrapper .form-control::placeholder {
-	color: hsla(0, 0%, 100%, 0.87);
+.header .btns-wrapper .input-wrapper .form-control::placeholder {
+	color: rgba(255, 255, 255, 0.87);
 }
-
-.icon-wrapper {
+.header .btns-wrapper .icon-wrapper {
 	padding: 0 2px;
 	display: flex;
 	justify-content: center;
@@ -77,49 +68,36 @@
 	width: 28px;
 	height: 100%;
 }
-
-.icon-wrapper svg {
+.header .btns-wrapper .icon-wrapper svg {
 	width: 24px;
 	height: 24px;
 }
-
-.input-wrapper .search-icon-wrapper {
-	/* margin-right: -28px; */
+.header .btns-wrapper .icon-wrapper.search-icon-wrapper {
 	z-index: 10;
 	position: absolute;
 	top: 50%;
 	left: 2px;
 	transform: translateY(-50%);
 }
-
-.input-wrapper .search-icon-wrapper .search-icon {
-	width: 24px;
-	height: 24px;
-}
-
-.input-wrapper .help-icon-wrapper {
+.header .btns-wrapper .icon-wrapper.help-icon-wrapper {
 	position: absolute;
 	top: 50%;
 	right: 38px;
 	transform: translateY(-50%);
 	z-index: 10;
 }
-
-.input-wrapper .close-icon-wrapper {
+.header .btns-wrapper .icon-wrapper.close-icon-wrapper {
 	position: absolute;
 	top: 50%;
 	right: 5px;
 	transform: translateY(-50%);
 	z-index: 10;
 }
-
-.input-wrapper .help-icon-wrapper .help-icon {
+.header .btns-wrapper .icon-wrapper.search-icon-wrapper .search-icon, .header .btns-wrapper .icon-wrapper.help-icon-wrapper .search-icon, .header .btns-wrapper .icon-wrapper.close-icon-wrapper .search-icon {
 	width: 24px;
 	height: 24px;
-	cursor: pointer;
 }
-
-.form-control:not(:focus) ~ .help-icon-wrapper,
-.form-control:not(:focus) ~ .close-icon-wrapper {
+.form-control:not(:focus) ~ .help-icon-wrapper, .form-control:not(:focus) ~ .close-icon-wrapper {
 	display: none;
 }
+
