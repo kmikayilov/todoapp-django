@@ -1,0 +1,29 @@
+{% extends "../Base.html" %} 
+{% load static %}
+
+{% block title %} 
+{{project_name|capfirst}}: Todoist
+{% endblock %} 
+
+{% block content %} 
+  <h1 class="title">
+    <span class="name" style="margin-right:auto;">{{project_name|capfirst}}</span>
+    {% if project_name != 'inbox' %}
+      <button class="btn feature-toggle-btn">
+        ...
+        <div class="additional-features-wrapper d-flex flex-column align-items-center justify-content-center">
+          <a href="{% url 'item-edit' 'project' project_name %}" class="btn mb-2">Edit</a>
+          <a href="{% url 'item-delete' 'project' project_name %}" class="btn">Delete</a>
+        </div>
+      </button>
+    {% endif %}
+  </h1>
+  {% for task in tasks %}
+  {% include '../components/TaskDetails.html' %}
+  {% endfor %}
+  <form autocomplete="off" id="{{date}}" class="new-task-form closed" action="{% url 'project-detail' project_name|lower %}" method="POST">
+    {% csrf_token %}
+    {% include '../components/TaskAdditionForm.html' %}
+  </form>
+{% endblock %} 
+

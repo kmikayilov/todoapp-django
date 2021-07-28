@@ -1,0 +1,30 @@
+{% extends "../Base.html" %} 
+{% load static %}
+
+{% block title %} 
+Todoist: Task edit
+{% endblock %} 
+
+{% block content %} 
+    <h1 class="title">
+      <span class="name">Task edit</span>
+    </h1>
+    <form autocomplete="off" class="new-task-form" action="{% url 'task-edit' id  %}" method="POST">
+        {% csrf_token %}
+        <div class="inputs-wrapper">
+            <div class="task-input-wrapper">{{form.task}}</div>
+            <div class="desc-input-wrapper">{{form.description}}</div>
+            <div class="add-input-wrapper">
+            {{form.time}}
+            {{form.project}}
+            {{form.label}}
+            {{form.priority}}
+            </div>
+        </div>
+        <div class="btns">
+            <button type="submit" class="btn submit">Edit task</button>
+        </div>
+    </form>
+{% endblock %} 
+
+ 

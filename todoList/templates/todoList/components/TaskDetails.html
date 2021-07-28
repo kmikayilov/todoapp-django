@@ -19,11 +19,14 @@
             {% if task.description is not None %}<div class="task-desc">{{task.description}}</div>{% endif %}
             {% if url != 'today' and url != 'upcoming' %}<div class="task-time">{{task.time}}</div>{% endif %}
         </div>
-        <!-- <div class="task-actions-wrapper">
-            <div class="task">x</div>
-            <div class="task">y</div>
-            <div class="task">z</div>
-        </div> -->
+        <div class="task-actions-wrapper">
+            <button class="btn feature-toggle-btn">
+                ...
+                <div class="additional-features-wrapper d-flex flex-column align-items-center justify-content-center">
+                  <a href="{% url 'task-edit' task.id %}" class="btn mb-2">Edit</a>
+                </div>
+            </button>
+        </div>
     </div>
     {% if url != "project" and task.project %}
     <div class="project-wrapper">

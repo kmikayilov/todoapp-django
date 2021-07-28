@@ -1,4 +1,4 @@
-{% extends "./base.html" %} 
+{% extends "../Base.html" %} 
 {% load static %}
 
 {% block title %} 
@@ -10,11 +10,11 @@ Inbox: Todoist
       <span class="name">Inbox</span>
     </h1>
     {% for task in tasks %}
-    {% include './includes/todoTask.html' %}
+    {% include './components/TaskDetails.html' %}
     {% endfor %}
     <form autocomplete="off" class="new-task-form closed" action="{% url 'project-detail' inbox_id %}" method="POST">
       {% csrf_token %}
-      {% include './includes/taskAdditionForm.html' %}
+      {% include '../components/TaskAdditionForm.html' %}
     </form>
 {% endblock %} 
 

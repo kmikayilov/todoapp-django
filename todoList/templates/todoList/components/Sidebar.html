@@ -10,7 +10,7 @@
                 <div class="nav-item-text">Inbox</div>
                 <div class="nav-item-task-count">
                     {% for proj in all_tasks_count.projects %}
-                        {% if proj.name == 'Inbox' %}
+                        {% if proj.name == 'inbox' %}
                             {{proj.task_count}}
                         {% endif %}
                     {% endfor %}
@@ -56,20 +56,20 @@
                 </div>
                 <div class="title">Projects</div>
             </button>
-            <button class="btn nav-actions" onclick="console.log('project addition')">
+            <a class="btn nav-actions" href="{% url 'item-add' 'project' %}">
                 <div class="add-icon">
                     <svg width="13" height="13">
                         <path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" fill="currentColor" fill-rule="evenodd"></path>
                     </svg>
                 </div>
-            </button>
+            </a>
         </div>
         <ul class="nav-items">
             {% for project in all_tasks_count.projects %}
-                {% if project.name != 'Inbox' %}
+                {% if project.name != 'inbox' %}
                 <li class="nav-item">
-                    <a class="nav-item-link" href="{% url 'project-detail' project.name|lower %}">
-                        <div class="nav-item-icon"><div class="icon {{project.color.name}}"></div></div>
+                    <a class="nav-item-link" href="{% url 'project-detail' project.name %}">
+                        <div class="nav-item-icon"><div class="icon {{project.color|slugify}}"></div></div>
                         <div class="nav-item-text">{{project.name}}</div>
                         <div class="nav-item-task-count">{{project.task_count}}</div>
                     </a>
@@ -90,18 +90,18 @@
                 </div>
                 <div class="title">Labels</div>
             </button>
-            <button class="btn nav-actions" onclick="console.log('project addition')">
+            <a class="btn nav-actions" href="{% url 'item-add' 'label' %}">
                 <div class="add-icon">
                     <svg width="13" height="13">
                         <path d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z" fill="currentColor" fill-rule="evenodd"></path>
                     </svg>
                 </div>
-            </button>
+            </a>
         </div>
         <ul class="nav-items">
             {% for label in all_tasks_count.labels %}
                 <li class="nav-item">
-                    <a class="nav-item-link" href="{% url 'label-detail' label.name|lower %}">
+                    <a class="nav-item-link" href="{% url 'label-detail' label.name %}">
                         <div class="nav-item-icon"><div class="icon {{label.color|slugify}}"></div></div>
                         <div class="nav-item-text">{{label.name}}</div>
                         <div class="nav-item-task-count">{{label.task_count}}</div>

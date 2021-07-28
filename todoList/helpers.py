@@ -1,8 +1,7 @@
 from todoList.forms import TodoTaskForm
 from .models import Project, TodoTask, Label, Priority
 import datetime
-from random import randrange
-import pprint
+
 
 def all_tasks_counter():
     
@@ -58,8 +57,8 @@ def upcomingTasksFetch():
             "tasks": TodoTask.objects.filter(time=i).order_by("priority"),
             "form": TodoTaskForm(initial={
                 'time': i,
-                'priority': Priority.objects.filter(rank=4)[0],
-                'project': Project.objects.filter(name="Inbox")[0]
-            })
+                'priority': Priority.objects.filter(rank=4)[0] if Priority.objects.filter(rank=4) else None,
+                'project': Project.objects.filter(name="inbox")[0] if Project.objects.filter(name="inbox") else None
+            }, prefix=i)
         })
     return upcomingInfoArray

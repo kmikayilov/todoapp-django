@@ -16,35 +16,35 @@
     <link rel="stylesheet" type="text/css" href="{% static 'todoList/css/includes/todoTask.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'todoList/css/includes/addTaskForm.css' %}">
 
+
     <script src="{% static 'todoList/js/bootstrap.min.js' %}" ></script>
     <script src="{% static 'todoList/js/main.js' %}" ></script>
     {% block css_files %}{% endblock %}
 </head>
 <body>
     <div class="app">
-        {% include './includes/header.html' %}
+        {% include './components/Header.html' %}
         <div class="main">
-            {% include "./includes/sidebar.html" %}
+            {% include "./components/Sidebar.html" %}
             <div class="content" id="content">
                 {% block content %}{% endblock %}
             </div>
         </div>
     </div>
     <script type="text/javascript">
-        var data = null;
         var forms = null
                 
         window.onload = () => {
             forms = document.querySelectorAll('.new-task-form')
+            toggleButtons = document.querySelectorAll('.feature-toggle-btn')
 
             for (var i = 0 ; i < forms.length; i++) {
                 forms[i].addEventListener('click' , function(e) {
-                    
                     let isClosed = false
                     let addTaskBtn = this.querySelector(".add-task")        
                     let cancelBtn = this.querySelector(".cancel")
-                   
-                    if (e.target == cancelBtn || e.target == addTaskBtn) {
+
+                    if (cancelBtn && cancelBtn.contains(e.target) || addTaskBtn && addTaskBtn.contains(e.target)) {
                         this.classList.forEach(c => isClosed = c === 'closed' ? true : false );
                         if (isClosed) {
                             this.classList.remove('closed');
@@ -53,9 +53,34 @@
                         else this.classList.add('closed')	
                     } 
                     
+                } , false ); 
+                
+                let task_wrapper = forms[i].querySelector(".task-input-wrapper")
+                
+                if (task_wrapper) {
+                    let input = task_wrapper.querySelector("input");
+                    let addTaskBtn = forms[i].querySelector(".btn.submit")  
+        
+                    addTaskBtn.disabled = true;
+        
+                    input.addEventListener("change", function() {
+                        if (this.value === "") addTaskBtn.disabled = true; 
+                        else addTaskBtn.disabled = false;
+                    }, false);
+                }
+            }
+
+            for (var i = 0 ; i < toggleButtons.length; i++) {
+                toggleButtons[i].addEventListener('click' , function(e) {
+
+                    var popup = this.querySelector('.additional-features-wrapper')
+                    console.log(popup)
+                    if (popup.className.includes('visible')) popup.classList.remove('visible')
+                    else popup.classList.add('visible')
                     
                 } , false ); 
-            }            
+            }
+            
 
             anchors = document.querySelectorAll('.nav-item');
             for(let i=0; i < anchors.length; i++) { 

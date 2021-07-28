@@ -149,7 +149,44 @@
 	opacity: 0;
 	transition: opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
 }
-.task .task-wrapper .task-actions-wrapper .task {
+/* .task .task-wrapper .task-actions-wrapper .task {
 	height: 100%;
 	width: fit-content;
+} */
+
+.task .task-wrapper .task-actions-wrapper .feature-toggle-btn {
+	position: relative;
+	padding: 5px 10px !important;
+}
+
+.task .task-wrapper .task-actions-wrapper .feature-toggle-btn:hover {
+	background-color: #292929;
+}
+
+.task .task-wrapper .task-actions-wrapper .feature-toggle-btn .additional-features-wrapper {
+	position: absolute;
+	top: 100%;
+	right: 100%;
+	width: 100px;
+	height: fit-content;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	background-color: #292929;
+	padding: 10px;
+	border-radius: 10px;
+	z-index: 10;
+	opacity: 0;
+	transition: opacity .15s ease-out;
+}
+
+.task .task-wrapper .task-actions-wrapper .feature-toggle-btn .additional-features-wrapper.visible {
+	opacity: 1;
+}
+
+.task .task-wrapper .task-actions-wrapper .feature-toggle-btn .additional-features-wrapper .btn {
+	padding: 5px 10px !important;
+	width: 100%;
+}
+
+.task .task-wrapper .task-actions-wrapper .feature-toggle-btn .additional-features-wrapper .btn:hover {
+	background-color:#1f1f1f;
 }

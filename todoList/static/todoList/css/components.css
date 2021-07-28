@@ -65,7 +65,7 @@
 	font-weight: 400;
 }
 .app .main .nav-items {
-	width: 100%;
+	width: 98%;
 	height: fit-content;
 	padding: 0;
 }
@@ -141,4 +141,41 @@
 .app .btn:hover, .app .btn:focus {
 	outline: none;
 	box-shadow: none;
+}
+
+.app .main .content .title .feature-toggle-btn {
+	position: relative;
+	padding: 5px 10px !important;
+}
+
+.app .main .content .title .feature-toggle-btn:hover {
+	background-color: #292929;
+}
+
+.app .main .content .title .feature-toggle-btn .additional-features-wrapper {
+	position: absolute;
+	top: 100%;
+	right: 100%;
+	width: 100px;
+	height: fit-content;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	background-color: #292929;
+	padding: 10px;
+	border-radius: 10px;
+	z-index: 10;
+	opacity: 0;
+	transition: opacity .15s ease-out;
+}
+
+.app .main .content .title .feature-toggle-btn .additional-features-wrapper.visible {
+	opacity: 1;
+}
+
+.app .main .content .title .feature-toggle-btn .additional-features-wrapper .btn {
+	padding: 5px 10px !important;
+	width: 100%;
+}
+
+.app .main .content .title .feature-toggle-btn .additional-features-wrapper .btn:hover {
+	background-color:#1f1f1f;
 }

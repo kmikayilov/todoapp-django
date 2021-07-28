@@ -3,7 +3,7 @@
         <span class="name">{{wrapperInfo.date}}</span> 
     </h1>
     {% for task in wrapperInfo.tasks %}
-    {% include './todoTask.html' %}
+    {% include './TaskDetails.html' %}
     {% endfor %}
     <form autocomplete="off" id="{{wrapperInfo.date}}" class="new-task-form closed" action="{% url 'upcoming-tasks' %}" method="POST">
         {% csrf_token %}

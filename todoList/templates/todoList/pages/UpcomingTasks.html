@@ -1,4 +1,4 @@
-{% extends "./base.html" %} 
+{% extends "../Base.html" %} 
 {% load static %}
 
 {% block title %} 
@@ -7,7 +7,7 @@ Today: Todoist
 
 {% block content %} 
     {% for wrapperInfo in upcomingInfoArr %}
-    {% include './includes/dayWrapper.html' %}
+    {% include '../components/UpcomingDayWrapper.html' %}
     {% endfor %}
 {% endblock %} 
 
